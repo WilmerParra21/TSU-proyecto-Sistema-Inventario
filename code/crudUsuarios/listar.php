@@ -11,7 +11,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Productos</title>
+	<title>Usuarios</title>
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/style.css">
 </head>
@@ -104,7 +104,7 @@ foreach ($usuarios as $dato){
 <div>
 <p class="card-text font-italic mr-4 border-bottom border-dark pb-2">Generar Reporte PDF de todo el registro de Productos</p>
 </div>
-	<a href="#" class="btn btn-danger badge-pill">Obtener en PDF</a>
+	<a href="../usuariospdf.php" class="btn btn-danger badge-pill">Obtener en PDF</a>
 
 </div>
 </div>
