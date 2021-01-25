@@ -28,11 +28,11 @@
       <li class="nav-item dropdown">
        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Clientes</a>
+          <a class="dropdown-item" href="code/crudCliente/clientes.php">Clientes</a>
           <a class="dropdown-item" href="code/crudProd/productos.php">Productos</a>
-          <a class="dropdown-item" href="#">Proveedores</a>
+          <a class="dropdown-item" href="code/crudProov/proveedores.php">Proveedores</a>
           <a class="dropdown-item" href="code/crudUsuarios/listar.php">Usuarios</a>
-           <a class="dropdown-item" href="#">ventas</a>
+           <a class="dropdown-item" href="#">Ventas</a>
         </div>
       </li>
        <li class="nav-item active">
@@ -46,7 +46,7 @@
         <a class="nav-link text-dark" href="code/ingreso.php">iniciar sesión</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link text-dark" href="#">cerrar sesion</a>
+        <a class="nav-link text-dark" href="code/sessionOff.php">cerrar sesion</a>
       </li>
       </div>
     </ul>

@@ -1,9 +1,9 @@
 <?php
 	include '../conex.php';
 
-	$sentencia = $conex->query('SELECT * FROM producto;');
+	$sentencia = $conex->query('SELECT * FROM cliente;');
 
-	$productos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+	$clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Productos</title>
+	<title>Clientes</title>
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/style.css">
 </head>
@@ -35,10 +35,10 @@
       <li class="nav-item dropdown">
        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="../crudCliente/clientes.php">Clientes</a>
-    <a class="dropdown-item" href="productos.php">Productos</a>
-    <a class="dropdown-item" href="#">Proveedores</a>
-    <a class="dropdown-item" href="#">Ventas</a>
+          <a class="dropdown-item" href="clientes.php">Clientes</a>
+          <a class="dropdown-item" href="../crudProd/productos.php">Productos</a>
+          <a class="dropdown-item" href="#">Proveedores</a>
+           <a class="dropdown-item" href="#">ventas</a>
         </div>
       </li>
        <li class="nav-item active">
@@ -51,57 +51,56 @@
   </div>
 </nav>
 
-</div>
-<h1 class="text-center text-light font-weight-bold mt-2 font-italic">Productos</h1>
+		</div>
+<h1 class="text-center text-light font-weight-bold mt-2 font-italic">Clientes</h1>
 
 	</header><!-- /header -->
 
 	<div class="container mt-2">
 	<div class="col col-3 float-right shadow">
-	<a href="agregar.php" class="btn btn-block btn-warning mb-3">Agregar Producto</a>
+		<a href="agregar.php" class="btn btn-block btn-warning mb-3">Agregar Cliente</a>
 	</div>
 	<table class="table">
 		<thead class="table-dark">
 			<tr>
-			<th class="text-center" scope="col">Código</th>
+			<th class="text-center" scope="col">ID</th>
 			<th class="text-center" scope="col">Nombre</th>
-			<th class="text-center" scope="col">Precio</th>
-			<th class="text-center" scope="col">Iva</th>
-			<th class="text-center" scope="col">Cantidad</th>
-			<th class="text-center" scope="col">Marca</th>
+			<th class="text-center" scope="col">Apellido</th>
+			<th class="text-center" scope="col">Dirección</th>
+			<th class="text-center" scope="col">Teléfono</th>
 				
 			<th class="text-center">Acciones</th>
 			</tr>
 		</thead>
+
 		<tbody>
 <?php
-foreach ($productos as $dato){
+foreach ($clientes as $dato){
 ?>
 <tr class="border border-danger">
 
-	<td class="text-center"><?php echo $dato->id_Producto;?></td>
+	<td class="text-center"><?php echo $dato->id_Cliente;?></td>
 	
-	<td class="text-capitalize"><?php echo $dato->nombreProd;?></td>
+	<td class="text-capitalize"><?php echo $dato->nombre;?></td>
 	
-	<td class="text-center"><?php echo $dato->precioProd."$";?></td>
+	<td class="text-center"><?php echo $dato->apellido;?></td>
 	
-	<td class="text-center"><?php echo $dato->iva."%";?></td>
+	<td class="text-center"><?php echo $dato->direccion;?></td>
 
-	<td class="text-center"><?php echo $dato->cantProd;?></td>
+	<td class="text-center"><?php echo $dato->telefono;?></td>
 	
-	<td class="text-center text-capitalize"><?php echo $dato->marca;?></td>
 	<td>
-	<a href="detalle.php?id=<?php echo $dato->id_Producto; ?>" class="btn btn-info">Ver Detalle</a>
+	<a href="detalle.php?id=<?php echo $dato->id_Cliente; ?>" class="btn btn-info">Ver Detalle</a>
 
-	<a href="editar.php?id=<?php echo $dato->id_Producto; ?>" class="btn btn-success">Editar</a>
+	<a href="editar.php?id=<?php echo $dato->id_Cliente; ?>" class="btn btn-success">Editar</a>
 
-	<a href="eliminar.php?id=<?php echo $dato->id_Producto; ?>" class="btn btn-danger" onclick="confirm('¿Desea Eliminar?')">Eliminar</a>
+	<a href="eliminar.php?id=<?php echo $dato->id_Cliente; ?>" class="btn btn-danger" onclick="confirm('¿Desea Eliminar?')">Eliminar</a>
 			</td>
 			</tr>
 <?php
 }
 ?>
-	</tbody>
+		</tbody>
 	</table>
 
 	<div class="card float-right" style="width: 40rem;">
@@ -110,7 +109,7 @@ foreach ($productos as $dato){
 <div>
 <p class="card-text font-italic mr-4 border-bottom border-dark pb-2">Generar Reporte PDF de todo el registro de Productos</p>
 </div>
-	<a href="../productoPDF.php" class="btn btn-danger badge-pill">Obtener en PDF</a>
+	<a href="../clientePDF.php" class="btn btn-danger badge-pill">Obtener en PDF</a>
 
 </div>
 </div>
