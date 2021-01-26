@@ -10,9 +10,9 @@ $precio = $_POST['precioProd'];
 $iva = $_POST['iva'];
 $cantidad = $_POST['cantProd'];
 $categoria = $_POST['idCategoria'];
-$marca = $_POST['marca'];
 $stockMin = $_POST['stockMin'];
 $stockMax = $_POST['stockMax'];
+$marca = $_POST['marca'];
 
 $sentencia = $conex->prepare("INSERT INTO producto(nombreProd, precioProd, iva, stockMax, stockMin, cantProd, idCategoria, marca) VALUES (?, ?, ?, ?, ?, ?, ?, ?);");
 

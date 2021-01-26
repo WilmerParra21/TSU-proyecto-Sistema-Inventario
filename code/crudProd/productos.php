@@ -68,8 +68,9 @@
 			<th class="text-center" scope="col">Precio</th>
 			<th class="text-center" scope="col">Iva</th>
 			<th class="text-center" scope="col">Cantidad</th>
+			
 			<th class="text-center" scope="col">Marca</th>
-				
+
 			<th class="text-center">Acciones</th>
 			</tr>
 		</thead>
@@ -81,7 +82,7 @@ foreach ($productos as $dato){
 
 	<td class="text-center"><?php echo $dato->id_Producto;?></td>
 	
-	<td class="text-capitalize"><?php echo $dato->nombreProd;?></td>
+	<td class="text-capitalize text-center"><?php echo $dato->nombreProd;?></td>
 	
 	<td class="text-center"><?php echo $dato->precioProd."$";?></td>
 	
@@ -89,8 +90,9 @@ foreach ($productos as $dato){
 
 	<td class="text-center"><?php echo $dato->cantProd;?></td>
 	
-	<td class="text-center text-capitalize"><?php echo $dato->marca;?></td>
-	<td>
+	<td class="text-center"><?php echo $dato->marca;?></td>
+
+	<td class="text-center">
 	<a href="detalle.php?id=<?php echo $dato->id_Producto; ?>" class="btn btn-info">Ver Detalle</a>
 
 	<a href="editar.php?id=<?php echo $dato->id_Producto; ?>" class="btn btn-success">Editar</a>

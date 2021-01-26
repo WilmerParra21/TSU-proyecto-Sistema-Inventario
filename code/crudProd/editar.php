@@ -97,13 +97,13 @@ $producto = $sentencia->fetch(PDO::FETCH_OBJ);
 </div>
 
 </div>
-<div class="m-3 ml-4"> 
+<div class="m-3"> 
 <label for="marca2">Marca</label>
-<input type="text" name="marca2" class="ml-5" value="<?php echo $producto->marca; ?>">
+<input type="text" name="marca2" value="<?php echo $producto->marca; ?>">
 </div>
 <div class="m-3"> 
 <label for="stockMin2">Stock Minimo</label>
-<input type="number" name="stockMin2" class="" min="5" value="<?php echo $producto->stockMin; ?>">
+<input type="number" name="stockMin2" class="" min="6" value="<?php echo $producto->stockMin; ?>">
 </div>
 
 <div class="m-3">

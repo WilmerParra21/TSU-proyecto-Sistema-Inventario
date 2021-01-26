@@ -74,6 +74,9 @@ $producto = $sentencia->fetch(PDO::FETCH_OBJ);
      <li class="font-weight-bold">iva: <p class="text-primary"><?php echo $producto->iva;?>$</p></li>
 
      <li class="font-weight-bold">Cantidad: <p class="text-primary"><?php echo $producto->cantProd;?></p></li>
+
+      <li class="font-weight-bold">Marca: <p class="text-primary"><?php echo $producto->marca;?></p></li>
+
 </div>
 <div class="m-4">
      <li class="font-weight-bold">Stock Minimo: <p class="text-primary"><?php echo $producto->stockMin;?></p></li>
@@ -82,7 +85,6 @@ $producto = $sentencia->fetch(PDO::FETCH_OBJ);
 
        <li class="font-weight-bold">Categoria: <p class="text-primary"><?php echo $producto->idCategoria;?></p></li>
 
-        <li class="font-weight-bold">Marca: <p class="text-primary"><?php echo $producto->marca;?></p></li>
       </div>
   </ul>
 </section>

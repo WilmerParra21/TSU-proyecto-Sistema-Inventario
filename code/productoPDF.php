@@ -20,8 +20,9 @@ $this->Cell(20, 10, 'Precio', 1, 0, 'C', 0);
 $this->Cell(15, 10, 'Iva', 1, 0, 'C', 0);
 $this->Cell(23, 10, 'StockMax', 1, 0, 'C', 0);
 $this->Cell(23, 10, 'StockMin', 1, 0, 'C', 0);
-$this->Cell(28, 10, 'ID-Categoria', 1, 0, 'C', 0);
-$this->Cell(30, 10, 'Marca', 1, 1, 'C', 0);
+$this->Cell(30, 10, 'ID-Categoria', 1, 0, 'C', 0);
+
+$this->Cell(25, 10, 'Marca', 1, 1, 'C', 0);
 	}
 
 	// footer de página
@@ -52,8 +53,8 @@ $pdf->Cell(20, 10, $datos['precioProd'], 1, 0, 'C', 0);
 $pdf->Cell(15, 10, $datos['iva'], 1, 0, 'C', 0);
 $pdf->Cell(23, 10, $datos['stockMax'], 1, 0, 'C', 0);
 $pdf->Cell(23, 10, $datos['stockMin'], 1, 0, 'C', 0);
-$pdf->Cell(28, 10, $datos['idCategoria'], 1, 0, 'C', 0);
-$pdf->Cell(30, 10, $datos['marca'], 1, 1, 'C', 0);
+$pdf->Cell(30, 10, $datos['idCategoria'], 1, 0, 'C', 0);
+$pdf->Cell(25, 10, $datos['marca'], 1, 1, 'C', 0);
 	}
 
 	$pdf->Output();

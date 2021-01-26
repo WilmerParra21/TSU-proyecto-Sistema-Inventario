@@ -81,9 +81,9 @@
 </div>
 
 </div>
-<div class="m-3 ml-4"> 
+<div class="m-3">
 <label for="marca">Marca</label>
-<input type="text" name="marca" class="ml-5">
+<input type="text" name="marca">
 </div>
 <div class="m-3"> 
 <label for="stockMin">Stock Minimo</label>
