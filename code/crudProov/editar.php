@@ -1,16 +1,16 @@
 <?php
 if (!isset($_GET['id'])){
-  header('Location: clientes.php');
+  header('Location: proveedor.php');
 }
 require "../conex.php";
 
 $id = $_GET['id'];
 
-$sentencia = $conex->prepare('SELECT * FROM cliente WHERE id_Cliente = ?;');
+$sentencia = $conex->prepare('SELECT * FROM proveedor WHERE id_proveedor = ?;');
 
 $result = $sentencia->execute([$id]);
 
-$cliente = $sentencia->fetch(PDO::FETCH_OBJ);
+$proveedor = $sentencia->fetch(PDO::FETCH_OBJ);
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ $cliente = $sentencia->fetch(PDO::FETCH_OBJ);
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Modificar Cliente</title>
+  <title>Modificar Proveedor</title>
 
   <link rel="stylesheet" href="../../css/bootstrap.min.css">
 
@@ -70,27 +70,37 @@ $cliente = $sentencia->fetch(PDO::FETCH_OBJ);
 
 <div class="m-3 ml-4">  
 <label for="nombre2">Nombre</label>
-<input type="text" name="nombre2" class="form-control" value="<?php echo $cliente->nombre; ?>">
+<input type="text" name="nombre2" class="form-control" value="<?php echo $proveedor->nombre; ?>">
 </div>
 
 <div class="m-3 ml-4">
 <label for="apellido2">Apellido</label>
-<input type="text" name="apellido2" class="form-control" value="<?php echo $cliente->apellido; ?>">
+<input type="text" name="apellido2" class="form-control" value="<?php echo $proveedor->apellido; ?>">
 </div>
 
 <div class="m-3 ml-4">  
 <label for="direccion2">Dirección</label>
-<input type="text" name="direccion2" class="form-control" value="<?php echo $cliente->direccion; ?>">
+<input type="text" name="direccion2" class="form-control" value="<?php echo $proveedor->direccion; ?>">
 </div>
 
 <div class="m-3 ml-4"> 
 <label for="telefono2">Teléfono</label>
-<input type="text" name="telefono2" class="form-control" value="<?php echo $cliente->telefono; ?>">
+<input type="text" name="telefono2" class="form-control" value="<?php echo $proveedor->telefono; ?>">
 </div>
 
-<input type="hidden" name="id2" value="<?php echo $cliente->id_Cliente; ?>">
+<div class="m-3 ml-4"> 
+<label for="ciudad_prove2">Ciudad del Proveedor</label>
+<input type="text" name="ciudad_prove2" class="form-control" value="<?php echo $proveedor->ciudad_prove; ?>">
+</div>
 
-<div class="float-right px-3">
+<div class="m-3 ml-4"> 
+<label for="id_Producto2">id Producto</label>
+<input type="num" name="id_Producto2" class="form-control" value="<?php echo $proveedor->id_Producto; ?>">
+</div>
+
+<input type="hidden" name="id_proveedor2" value="<?php echo $proveedor->id_proveedor; ?>">
+
+<div class="float-right p-3">
 
 <input type="reset" value="Cancelar" class="btn btn-danger">
 
@@ -99,7 +109,7 @@ $cliente = $sentencia->fetch(PDO::FETCH_OBJ);
   </form>
 
 <div class="p-5">
-  <h1 class="text-center font-italic font-weight-bold text-light">Modificar Cliente</h1>
+  <h1 class="text-center font-italic font-weight-bold text-light">Modificar Proveedor</h1>
 </div>
   </section>
 </body>

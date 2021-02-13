@@ -18,13 +18,9 @@
 	<div class="mt-5 ml-3">
 	<p class="text-light font-italic">¿Desea iniciar nuevamente?</p>
 
-	<a href="ingreso.php" class="btn px-5 btn-outline-success">Iniciar Sesión</a>
+	<a href="../index.php" class="btn px-5 btn-outline-success">Iniciar Sesión</a>
 	</div>
-	<div class="mt-4 ml-3">
-	<p class="text-light font-italic">¿Ir al inicio?</p>
-
-	<a href="../index.php" class="btn px-5 ml-4 btn-outline-primary">Home</a>
-	</div>
+	
 </div>
 	</header><!-- /header -->
 </body>

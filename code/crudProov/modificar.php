@@ -1,25 +1,28 @@
 <?php
 
-if(!isset($_POST['nombre2']) || !isset($_POST['apellido2']) || !isset($_POST['direccion2']) || !isset($_POST['telefono2'])){
+if(!isset($_POST['nombre2']) || !isset($_POST['apellido2']) || !isset($_POST['direccion2']) || !isset($_POST['telefono2']) || !isset($_POST['ciudad_prove2'])  || !isset($_POST['id_Producto2'])){
 
-	header('Location: clientes.php');
+	header('Location: proveedor.php');
 }
 
 require '../conex.php';
 
-$id2 = $_POST['id2'];
 $nombre2 = $_POST['nombre2'];
 $apellido2 = $_POST['apellido2'];
 $direccion2 = $_POST['direccion2'];
 $telefono2 = $_POST['telefono2'];
+$ciudad_prove2 = $_POST['ciudad_prove2'];
+$id_Producto2 = $_POST['id_Producto2'];
+$id_proveedor2 = $_POST['id_proveedor2'];
 
-$sentencia = $conex->prepare('UPDATE cliente SET nombre = ?, apellido = ?, direccion = ?, telefono = ? WHERE id_Cliente = ?;');
 
-$result = $sentencia->execute([$nombre2, $apellido2, $direccion2, $telefono2, $id2]);
+$sentencia = $conex->prepare('UPDATE proveedor SET  nombre = ?, apellido = ?, direccion = ?, telefono = ?, ciudad_prove = ?, id_Producto = ? WHERE id_proveedor = ?;');
+
+$result = $sentencia->execute([$nombre2, $apellido2, $direccion2, $telefono2, $ciudad_prove2, $id_Producto2, $id_proveedor2]);
 
 if($result == true) {
 
-	header('Location: clientes.php');
+	header('Location: proveedor.php');
 } else{
 
 	echo "Error al Modificar";

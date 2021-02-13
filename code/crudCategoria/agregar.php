@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Agregar Cliente</title>
+	<title>Agregar Categoria</title>
 
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 
@@ -23,13 +23,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="../inicio.php">inicio</a>
+        <a class="nav-link" href="../../index.php">inicio</a>
       </li>
    
       <li class="nav-item dropdown">
        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="clientes.php">Clientes</a>
+          <a class="dropdown-item" href="#">Clientes</a>
           <a class="dropdown-item" href="code/productos.php">Productos</a>
           <a class="dropdown-item" href="#">Proveedores</a>
            <a class="dropdown-item" href="#">ventas</a>
@@ -54,27 +54,27 @@
 <form action="insertar.php" method="post" accept-charset="utf-8" class="m-3 col-5 p-3 pr-5 pb-4" style="background-color: rgba(255, 255, 255, 0.3); border: 2px solid red">
 	
 
-<div class="m-3 ml-4">	
-<label for="nombre">Nombre</label>
-<input type="text" name="nombre" class="form-control">
+<div class="m-1"> 
+<label for="idCategoria">Categoria</label>
+<input type="text" name="idCategoria" class="form-control">
 </div>
 
-<div class="m-3 ml-4">
-<label for="apellido">Apellido</label>
-<input type="text" name="apellido" class="form-control">
+<div class="m-1">
+<label for="descripcion">Descripcion</label>
+<input type="text" name="descripcion" class="form-control">
 </div>
 
-<div class="m-3 ml-4">	
-<label for="direccion">Dirección</label>
-<input type="text" name="direccion" class="form-control">
+<div class="m-1">	
+<label for="marca">Marca</label>
+<input type="text" name="marca" class="form-control">
 </div>
 
-<div class="m-3 ml-4"> 
-<label for="telefono">Teléfono</label>
-<input type="text" name="telefono" class="form-control">
+<div class="m-1"> 
+<label for="año">Año</label>
+<input type="number" name="año" class="form-control" min="4">
 </div>
 
-<div class="float-right px-3">
+<div class="float-right p-3">
 <input type="reset" value="Cancelar" class="btn btn-danger">
 
 <input type="submit" name="" value="Guardar" class="btn btn-success">
@@ -82,7 +82,7 @@
 	</form>
 
 <div class="p-5">
-	<h1 class="text-center font-italic font-weight-bold text-light">Agregar Cliente</h1>
+	<h1 class="text-center font-italic font-weight-bold text-light">Agregar Categoria</h1>
 </div>
 	</section>
 </body>

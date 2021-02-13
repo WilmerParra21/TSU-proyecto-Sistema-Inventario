@@ -1,17 +1,30 @@
+<?php
+	if (!isset($_GET['id'])){
+  header('Location: categoria.php');
+}
+require "../conex.php";
+
+$id = $_GET['id'];
+
+$sentencia = $conex->prepare('SELECT * FROM categoria WHERE id_Categoria = ?;');
+
+$result = $sentencia->execute([$id]);
+
+$categoria = $sentencia->fetch(PDO::FETCH_OBJ);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Agregar Cliente</title>
-
+	<title>Categoria</title>
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
-
-	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<link rel="stylesheet" href="../../css/style.css">
 </head>
-<body style="background-image: url('../../img/slide02.jpg'); background-size: cover; background-attachment: fixed; background-position: center;">
+<body>
 
-	<header>
+	<header class="header">
 		<div class="encabezado">
 		
 <nav class="navbar navbar-expand-lg navbar-light mt-3" style="background-color: rgba( 255, 255, 255, .5);
@@ -23,13 +36,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="../inicio.php">inicio</a>
+        <a class="nav-link" href="../index.php">inicio</a>
       </li>
    
       <li class="nav-item dropdown">
        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="clientes.php">Clientes</a>
+          <a class="dropdown-item" href="#">Clientes</a>
           <a class="dropdown-item" href="code/productos.php">Productos</a>
           <a class="dropdown-item" href="#">Proveedores</a>
            <a class="dropdown-item" href="#">ventas</a>
@@ -46,44 +59,25 @@
 </nav>
 
 		</div>
-
+<h1 class="text-center text-light font-weight-bold mt-2 font-italic text-capitalize"><?php echo $categoria->descripcion;?></h1>
 	</header><!-- /header -->
 
-<section class="p-3 d-flex">
 
-<form action="insertar.php" method="post" accept-charset="utf-8" class="m-3 col-5 p-3 pr-5 pb-4" style="background-color: rgba(255, 255, 255, 0.3); border: 2px solid red">
-	
+<section class="m-5">
+  
+  <ul class="list-unstyled d-flex"> 
 
-<div class="m-3 ml-4">	
-<label for="nombre">Nombre</label>
-<input type="text" name="nombre" class="form-control">
+<div class="m-4">
+     <li class="font-weight-bold">Categoria: <p class="text-primary"><?php echo $categoria->id_Categoria;?></p></li>
+
+      <li class="font-weight-bold">Marca: <p class="text-primary"><?php echo $categoria->marca;?></p></li>
+
+      <li class="font-weight-bold">Año: <p class="text-primary"><?php echo $categoria->año;?></p></li>
+
 </div>
+  </ul>
+</section>
 
-<div class="m-3 ml-4">
-<label for="apellido">Apellido</label>
-<input type="text" name="apellido" class="form-control">
-</div>
-
-<div class="m-3 ml-4">	
-<label for="direccion">Dirección</label>
-<input type="text" name="direccion" class="form-control">
-</div>
-
-<div class="m-3 ml-4"> 
-<label for="telefono">Teléfono</label>
-<input type="text" name="telefono" class="form-control">
-</div>
-
-<div class="float-right px-3">
-<input type="reset" value="Cancelar" class="btn btn-danger">
-
-<input type="submit" name="" value="Guardar" class="btn btn-success">
-</div>
-	</form>
-
-<div class="p-5">
-	<h1 class="text-center font-italic font-weight-bold text-light">Agregar Cliente</h1>
-</div>
-	</section>
+<a href="categoria.php" class="btn btn-outline-primary ml-5">Volver atrás</a>
 </body>
 </html>

@@ -14,10 +14,10 @@ class PDF extends FPDF{
 		// salto de linea
 		$this->Ln(20);
 	
-$this->Cell(15, 10, 'ID', 1, 0, 'C', 0);
-$this->Cell(35, 10, 'Nombre', 1, 0, 'C', 0);
-$this->Cell(20, 10, 'Precio', 1, 0, 'C', 0);
-$this->Cell(15, 10, 'Iva', 1, 0, 'C', 0);
+$this->Cell(13, 10, 'ID', 1, 0, 'C', 0);
+$this->Cell(45, 10, 'Nombre', 1, 0, 'C', 0);
+$this->Cell(18, 10, 'Precio', 1, 0, 'C', 0);
+$this->Cell(13, 10, 'Iva', 1, 0, 'C', 0);
 $this->Cell(23, 10, 'StockMax', 1, 0, 'C', 0);
 $this->Cell(23, 10, 'StockMin', 1, 0, 'C', 0);
 $this->Cell(30, 10, 'ID-Categoria', 1, 0, 'C', 0);
@@ -35,7 +35,7 @@ $this->Cell(0, 10, utf8_decode('Página ') .$this->PageNo().'/{nb}',0,0,'C');
 
 require('conexpdf.php');
 
-$consulta = "SELECT * FROM producto";
+$consulta = "SELECT * FROM producto WHERE cantProd < stockMin";
 
 // se trasmite la consulta
 $resultado = $mysqli->query($consulta);
@@ -47,10 +47,10 @@ $resultado = $mysqli->query($consulta);
 
 while($datos = $resultado->fetch_assoc()){
 
-$pdf->Cell(15, 10, $datos['id_Producto'], 1, 0, 'C', 0);
-$pdf->Cell(35, 10, $datos['nombreProd'], 1, 0, 'C', 0);
-$pdf->Cell(20, 10, $datos['precioProd'], 1, 0, 'C', 0);
-$pdf->Cell(15, 10, $datos['iva'], 1, 0, 'C', 0);
+$pdf->Cell(13, 10, $datos['id_Producto'], 1, 0, 'C', 0);
+$pdf->Cell(45, 10, $datos['nombreProd'], 1, 0, 'C', 0);
+$pdf->Cell(18, 10, $datos['precioProd'], 1, 0, 'C', 0);
+$pdf->Cell(13, 10, $datos['iva'], 1, 0, 'C', 0);
 $pdf->Cell(23, 10, $datos['stockMax'], 1, 0, 'C', 0);
 $pdf->Cell(23, 10, $datos['stockMin'], 1, 0, 'C', 0);
 $pdf->Cell(30, 10, $datos['idCategoria'], 1, 0, 'C', 0);

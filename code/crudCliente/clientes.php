@@ -12,8 +12,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Clientes</title>
-	<link rel="stylesheet" href="../../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
 </head>
 <body>
 
@@ -29,7 +30,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="../../index.php">inicio</a>
+        <a class="nav-link" href="../inicio.php">inicio</a>
       </li>
    
       <li class="nav-item dropdown">
@@ -58,7 +59,7 @@
 
 	<div class="container mt-2">
 	<div class="col col-3 float-right shadow">
-		<a href="agregar.php" class="btn btn-block btn-warning mb-3">Agregar Cliente</a>
+		<a href="agregar.php" class="btn btn-block btn-outline-warning mb-3"><i class="fas fa-plus"></i> Agregar Cliente</a>
 	</div>
 	<table class="table">
 		<thead class="table-dark">
@@ -89,12 +90,12 @@ foreach ($clientes as $dato){
 
 	<td class="text-center"><?php echo $dato->telefono;?></td>
 	
-	<td>
-	<a href="detalle.php?id=<?php echo $dato->id_Cliente; ?>" class="btn btn-info">Ver Detalle</a>
+	<td class="text-center">
+	<a href="detalle.php?id=<?php echo $dato->id_Cliente; ?>" class="btn btn-outline-info">Ver Detalle</a>
+ 
+	<a href="editar.php?id=<?php echo $dato->id_Cliente; ?>" class="btn btn-outline-success"><i class="far fa-edit"></i> Editar</a>
 
-	<a href="editar.php?id=<?php echo $dato->id_Cliente; ?>" class="btn btn-success">Editar</a>
-
-	<a href="eliminar.php?id=<?php echo $dato->id_Cliente; ?>" class="btn btn-danger" onclick="confirm('¿Desea Eliminar?')">Eliminar</a>
+	<a href="eliminar.php?id=<?php echo $dato->id_Cliente; ?>" class="btn btn-outline-danger" onclick="confirm('¿Desea Eliminar?')"><i class="fas fa-minus-circle"></i> Eliminar</a>
 			</td>
 			</tr>
 <?php
@@ -107,15 +108,16 @@ foreach ($clientes as $dato){
 <div class="card-body badge-pill">
 <div class="d-flex justify-content-center">
 <div>
-<p class="card-text font-italic mr-4 border-bottom border-dark pb-2">Generar Reporte PDF de todo el registro de Productos</p>
+<p class="card-text font-italic mr-4 border-bottom border-dark pb-2">Generar Reporte PDF de todo el registro de Clientes</p>
 </div>
-	<a href="../clientePDF.php" class="btn btn-danger badge-pill">Obtener en PDF</a>
+	<a href="../clientePDF.php" class="btn btn-danger badge-pill"><i class="fas fa-download"></i> Obtener en PDF</a>
 
 </div>
 </div>
 </div>
 </div>
 
+<script src="../../js/all.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../js/bootstrap.bundle.min.js" type="text/javascript"></script>
 <script src="../../js/jquery-3.5.1.min.js" type="text/javascript"></script>
 <script src="../../js/bootstrap.min.js" type="text/javascript"></script>

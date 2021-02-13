@@ -1,16 +1,16 @@
 <?php
 	if (!isset($_GET['id'])){
-  header('Location: cliente.php');
+  header('Location: proveedor.php');
 }
 require "../conex.php";
 
 $id = $_GET['id'];
 
-$sentencia = $conex->prepare('SELECT * FROM cliente WHERE id_Cliente = ?;');
+$sentencia = $conex->prepare('SELECT * FROM proveedor WHERE id_proveedor = ?;');
 
 $result = $sentencia->execute([$id]);
 
-$cliente = $sentencia->fetch(PDO::FETCH_OBJ);
+$proveedor = $sentencia->fetch(PDO::FETCH_OBJ);
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ $cliente = $sentencia->fetch(PDO::FETCH_OBJ);
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Ver Cliente</title>
+	<title>Ver Proveedor</title>
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/style.css">
 </head>
@@ -59,7 +59,7 @@ $cliente = $sentencia->fetch(PDO::FETCH_OBJ);
 </nav>
 
 		</div>
-<h1 class="text-center text-light font-weight-bold mt-2 font-italic text-capitalize">Cliente <?php echo $cliente->nombre;?> <?php echo $cliente->apellido;?></h1>
+<h1 class="text-center text-light font-weight-bold mt-2 font-italic text-capitalize">Proveedor <?php echo $proveedor->nombre;?> <?php echo $proveedor->apellido;?></h1>
 
 	</header><!-- /header -->
 
@@ -70,15 +70,23 @@ $cliente = $sentencia->fetch(PDO::FETCH_OBJ);
 
 <div class="m-4">
 
-     <li class="font-weight-bold">Dirección: <p class="text-primary"><?php echo $cliente->direccion;?></p></li>
+     <li class="font-weight-bold">Dirección: <p class="text-primary"><?php echo $proveedor->direccion;?></p></li>
 </div>
 <div class="m-4">
 
-    <li class="font-weight-bold">Teléfono: <p class="text-primary"><?php echo $cliente->telefono;?></p></li>
+    <li class="font-weight-bold">Teléfono: <p class="text-primary"><?php echo $proveedor->telefono;?></p></li>
+</div>
+
+<div class="m-4">
+<li class="font-weight-bold">Ciudad Proveedor: <p class="text-primary"><?php echo $proveedor->ciudad_prove;?></p></li>
+</div>
+
+<div class="m-4">
+<li class="font-weight-bold">id Producto: <p class="text-primary"><?php echo $proveedor->id_Producto;?></p></li>
 </div>
   </ul>
 </section>
 
-<a href="clientes.php" class="btn btn-outline-primary ml-5">Volver atrás</a>
+<a href="proveedor.php" class="btn btn-outline-primary ml-5">Volver atrás</a>
 </body>
 </html>

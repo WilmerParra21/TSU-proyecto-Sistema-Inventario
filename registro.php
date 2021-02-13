@@ -4,9 +4,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Login de Ingreso</title>
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/login.css">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<header id="header" class="">
@@ -22,7 +22,7 @@
    <ul class="navbar-nav mr-auto">
 
       <li class="nav-item active">
-        <a class="nav-link" href="../index.php">inicio</a>
+        <a class="nav-link disabled" href="#">inicio</a>
       </li>
    
       <li class="nav-item dropdown">
@@ -42,10 +42,10 @@
       </li>
       <div class="d-flex" style="margin-left: 30rem">
       	 <li class="nav-item">
-        <a class="nav-link text-dark" href="code/ingreso.php">iniciar sesión</a>
+        <a class="nav-link text-dark" href="index.php">iniciar sesión</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link text-dark" href="#">cerrar sesion</a>
+        <a class="nav-link text-dark" href="registro.php">Registrarse</a>
       </li>
       </div>
     </ul>
@@ -59,7 +59,7 @@
 		<div>
 			<h2>Registro</h2>
 		</div>
-<form id="formulary" action="crudUsuarios/insertar.php" method="POST" accept-charset="utf-8">
+<form id="formulary" action="code/crudUsuarios/insertar.php" method="POST" accept-charset="utf-8">
 <div style="margin-top: -2rem">
 <label for="nombre_ape">Nombre Completo:</label>
 <input type="text" id="nombre_ape" name="nombre_ape" placeholder="Ingrese Nombre y Apellido" onpaste ="return false">

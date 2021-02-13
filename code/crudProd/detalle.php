@@ -42,7 +42,7 @@ $producto = $sentencia->fetch(PDO::FETCH_OBJ);
       <li class="nav-item dropdown">
        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Clientes</a>
+          <a class="dropdown-item" href="../crudCliente/clientes.php">Clientes</a>
           <a class="dropdown-item" href="code/productos.php">Productos</a>
           <a class="dropdown-item" href="#">Proveedores</a>
            <a class="dropdown-item" href="#">ventas</a>
