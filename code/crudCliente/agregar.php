@@ -28,11 +28,12 @@
    
       <li class="nav-item dropdown">
        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="clientes.php">Clientes</a>
-          <a class="dropdown-item" href="code/productos.php">Productos</a>
-          <a class="dropdown-item" href="#">Proveedores</a>
-           <a class="dropdown-item" href="#">ventas</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgba(1, 1, 1, .9);">
+          <a class="nav-link text-light ml-2" href="categoria.php">Categoria</a>
+          <a class="nav-link text-light ml-2" href="clientes.php">Clientes</a>
+          <a class="nav-link text-light ml-2" href="../crudProd/productos.php">Productos</a>
+          <a class="nav-link text-light ml-2" href="../crudProov/proveedor.php">Proveedores</a>
+           <a class="nav-link text-light ml-2" href="../Venta/listar.php">Ventas</a>
         </div>
       </li>
        <li class="nav-item active">
@@ -53,7 +54,6 @@
 
 <form action="insertar.php" method="post" accept-charset="utf-8" class="m-3 col-5 p-3 pr-5 pb-4" style="background-color: rgba(255, 255, 255, 0.3); border: 2px solid red">
 	
-
 <div class="m-3 ml-4">	
 <label for="nombre">Nombre</label>
 <input type="text" name="nombre" class="form-control">
@@ -85,5 +85,9 @@
 	<h1 class="text-center font-italic font-weight-bold text-light">Agregar Cliente</h1>
 </div>
 	</section>
+
+<script src="../../js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<script src="../../js/jquery-3.5.1.min.js" type="text/javascript"></script>
+<script src="../../js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>

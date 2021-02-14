@@ -43,11 +43,12 @@ $categoria = $sentencia->fetch(PDO::FETCH_OBJ);
    
       <li class="nav-item dropdown">
        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Clientes</a>
-          <a class="dropdown-item" href="code/productos.php">Productos</a>
-          <a class="dropdown-item" href="#">Proveedores</a>
-           <a class="dropdown-item" href="#">ventas</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgba(1, 1, 1, .9);">
+          <a class="nav-link text-light ml-2" href="categoria.php">Categoria</a>
+          <a class="nav-link text-light ml-2" href="../crudCliente/clientes.php">Clientes</a>
+          <a class="nav-link text-light ml-2" href="../crudProd/productos.php">Productos</a>
+          <a class="nav-link text-light ml-2" href="../crudProov/proveedor.php">Proveedores</a>
+           <a class="nav-link text-light ml-2" href="../Venta/listar.php">Ventas</a>
         </div>
       </li>
        <li class="nav-item active">

@@ -1,19 +1,5 @@
-*, *:before, *:after{
-	box-sizing: inherit;
-}
 html{
 	box-sizing: border-box;
-}
-
-body{
-	/*
-	background-image: url('../img/repuestos-raulin.jpg');
-	*/
-	background-color: black;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-attachment: fixed;
-	background-size: cover;
 }
 
 h1, h2, h3{

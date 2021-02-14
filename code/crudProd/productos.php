@@ -37,11 +37,12 @@ include '../conex.php';
    
       <li class="nav-item dropdown">
        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="../crudCliente/clientes.php">Clientes</a>
-    <a class="dropdown-item" href="productos.php">Productos</a>
-    <a class="dropdown-item" href="../crudProov/proveedor.php">Proveedores</a>
-    <a class="dropdown-item" href="#">Ventas</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgba(1, 1, 1, .9);">
+    <a class="nav-link text-light ml-2" href="../crudCategoria/categoria.php">Categoria</a>
+    <a class="nav-link text-light ml-2" href="../crudCliente/clientes.php">Clientes</a>
+    <a class="nav-link text-light ml-2" href="productos.php">Productos</a>
+    <a class="nav-link text-light ml-2" href="../crudProov/proveedor.php">Proveedores</a>
+    <a class="nav-link text-light ml-2" href="../Venta/listar.php">Ventas</a>
         </div>
       </li>
        <li class="nav-item active">

@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="../css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	
 </head>
 <body id="header">
@@ -29,12 +29,13 @@
    
       <li class="nav-item dropdown">
        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="crudCliente/clientes.php">Clientes</a>
-          <a class="dropdown-item" href="crudProd/productos.php">Productos</a>
-          <a class="dropdown-item" href="crudProov/proveedor.php">Proveedores</a>
-          <a class="dropdown-item" href="crudUsuarios/listar.php">Usuarios</a>
-          <a class="dropdown-item" href="crudCategoria/categoria.php">Categoria</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgba(1, 1, 1, .9);">
+         <a class="nav-link text-light ml-2" href="crudCategoria/categoria.php">Categoria</a>
+          <a class="nav-link text-light ml-2" href="crudCliente/clientes.php">Clientes</a>
+          <a class="nav-link text-light ml-2" href="crudProd/productos.php">Productos</a>
+          <a class="nav-link text-light ml-2" href="crudProov/proveedor.php">Proveedores</a>
+          <a class="nav-link text-light ml-2" href="crudUsuarios/listar.php">Usuarios</a>
+          <a class="nav-link text-light ml-2" href="Venta/listar.php">Ventas</a>
         </div>
       </li>
        <li class="nav-item active">
@@ -82,12 +83,11 @@
       <li>
           <a class="nav-link text-light" href="Venta/agregar.php">Realizar Venta</a>
        </li>
-      
       </ul>
  
     </article>
     <article class="col-5">
-      <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      <p class="pl-2 text-light shadow" id="concepto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -101,6 +101,10 @@
 </section>
 </main>
 
+<!--texto para mostrar la hora actual con js-->
+<h6 class="m-4 text-light font-weight-bold" id="tiempo"></h6>
+
+<!-- footer // pie de Página -->
 <footer class="page-footer mt-5 border-top border-light" style="background-color: rgba(1, 1, 1, .7);">
 
 <div class="container text-center text-md-left pt-2 pt-md-4">
@@ -112,7 +116,6 @@
     <div class="col-md-3 mx-auto mt-2 mt-md-0 mb-0 mb-md-4">
       
       <h5 class="text-light pb-3 border-bottom border-success w-50">Servicios</h5>
-
     <br>
 
     <ul class="list-unstyled foot-desc">
@@ -145,20 +148,18 @@
                             
       <li class="mb-2 text-white"><small><span class="fa-li"><i class="fas fa-phone-alt"></i></span>+58 424 819 102</small></li>
      
-      <li class="mb-2 text-white"><small><span class="fa-li"><i class="far fa-envelope"></i></span>TechnoSiteMovil@hotmail.com</small></li>
+      <li class="mb-2 text-white"><small><span class="fa-li"><i class="far fa-envelope"></i></span>InversionesRaulin@gmail.com</small></li>
      
       <li class="text-white"><small><span class="fa-li"><i class="far fa-clock"></i></span>Lunes - Sábado: 8-17</small></li>
                         </ul>
-
                     </div>
-
   </div>
 </div>
 <div class="border-top border-danger text-center py-3 text-capitalize text-muted">&copy2021 Copyright desarrollado por: <a href="#" class="text-decoration-none text-light">Dani Pereira</a><a href="#" class="text-decoration-none text-light">, Dovany Liscano y </a><a href="#" class="text-decoration-none text-light"> Wilmer Parra</a>
            
 </div>
 </footer>
-
+<script src="../js/app.js" type="text/javascript"></script>
 <script src="../js/bootstrap.bundle.min.js" type="text/javascript"></script>
 <script src="../js/jquery-3.5.1.min.js" type="text/javascript"></script>
 <script src="../js/bootstrap.min.js" type="text/javascript"></script>

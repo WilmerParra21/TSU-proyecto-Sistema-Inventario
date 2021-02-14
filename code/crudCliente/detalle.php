@@ -41,11 +41,12 @@ $cliente = $sentencia->fetch(PDO::FETCH_OBJ);
    
       <li class="nav-item dropdown">
        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="clientes.php">Clientes</a>
-          <a class="dropdown-item" href="code/productos.php">Productos</a>
-          <a class="dropdown-item" href="#">Proveedores</a>
-           <a class="dropdown-item" href="#">ventas</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgba(1, 1, 1, .9);">
+          <a class="nav-link text-light ml-2" href="categoria.php">Categoria</a>
+          <a class="nav-link text-light ml-2" href="clientes.php">Clientes</a>
+          <a class="nav-link text-light ml-2" href="../crudProd/productos.php">Productos</a>
+          <a class="nav-link text-light ml-2" href="../crudProov/proveedor.php">Proveedores</a>
+           <a class="nav-link text-light ml-2" href="../Venta/listar.php">Ventas</a>
         </div>
       </li>
        <li class="nav-item active">
@@ -80,5 +81,9 @@ $cliente = $sentencia->fetch(PDO::FETCH_OBJ);
 </section>
 
 <a href="clientes.php" class="btn btn-outline-primary ml-5">Volver atrás</a>
+
+<script src="../../js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<script src="../../js/jquery-3.5.1.min.js" type="text/javascript"></script>
+<script src="../../js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>

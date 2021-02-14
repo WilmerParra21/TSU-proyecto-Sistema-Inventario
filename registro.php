@@ -31,11 +31,11 @@
           <a class="dropdown-item" href="#">Clientes</a>
           <a class="dropdown-item" href="#">Productos</a>
           <a class="dropdown-item" href="#">Proveedores</a>
-           <a class="dropdown-item" href="#">ventas</a>
+           <a class="dropdown-item" href="#">Ventas</a>
         </div>
       </li>
        <li class="nav-item active">
-        <a class="nav-link" href="#">Nosotros</a>
+        <a class="nav-link" href="Pagina Web/index.html">Nosotros</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Layout</a>

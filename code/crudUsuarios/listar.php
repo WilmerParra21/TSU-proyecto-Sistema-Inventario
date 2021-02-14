@@ -32,14 +32,14 @@
       <li class="nav-item active">
         <a class="nav-link" href="../inicio.php">inicio</a>
       </li>
-   
       <li class="nav-item dropdown">
        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="../crudCliente/clientes.php">Clientes</a>
-          <a class="dropdown-item" href="productos.php">Productos</a>
-          <a class="dropdown-item" href="../crudProov/proveedor.php">Proveedores</a>
-           <a class="dropdown-item" href="#">ventas</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgba(1, 1, 1, .9);">
+        	<a class="nav-link text-light ml-2" href="../crudCategoria/categoria.php">Categoria</a>
+          <a class="nav-link text-light ml-2" href="../crudCliente/clientes.php">Clientes</a>
+          <a class="nav-link text-light ml-2" href="../crudProd/productos.php">Productos</a>
+          <a class="nav-link text-light ml-2" href="../crudProov/proveedor.php">Proveedores</a>
+           <a class="nav-link text-light ml-2" href="../Venta/listar.php">Ventas</a>
         </div>
       </li>
        <li class="nav-item active">
@@ -103,7 +103,7 @@ foreach ($usuarios as $dato){
 <div class="card-body badge-pill">
 <div class="d-flex justify-content-center">
 <div>
-<p class="card-text font-italic mr-4 border-bottom border-dark pb-2">Generar Reporte PDF de todo el registro de Productos</p>
+<p class="card-text font-italic mr-4 border-bottom border-dark pb-2">Generar Reporte PDF de todo el registro de Usuarios</p>
 </div>
 	<a href="../ReportPdf/usuariospdf.php" class="btn btn-danger badge-pill"><i class="fas fa-download"></i> Obtener en PDF</a>
 
