@@ -1,22 +1,21 @@
 <?php
-if (!isset($_POST['nombreProd']) || !isset($_POST['precioProd']) || !isset($_POST['cantProd']) || !isset($_POST['stockMin']) || !isset($_POST['stockMax'])){
+if (!isset($_POST['idCategoria']) || !isset($_POST['precioProd']) || !isset($_POST['cantProd']) || !isset($_POST['stockMin']) || !isset($_POST['stockMax'])){
 	exit();
 }
 
 require '../conex.php';
 
-$nombre = $_POST['nombreProd'];
+$categoria = $_POST['idCategoria'];
 $precio = $_POST['precioProd'];
 $iva = $_POST['iva'];
 $cantidad = $_POST['cantProd'];
-$categoria = $_POST['idCategoria'];
-$stockMin = $_POST['stockMin'];
 $stockMax = $_POST['stockMax'];
+$stockMin = $_POST['stockMin'];
 $marca = $_POST['marca'];
 
-$sentencia = $conex->prepare("INSERT INTO producto(nombreProd, precioProd, iva, stockMax, stockMin, cantProd, idCategoria, marca) VALUES (?, ?, ?, ?, ?, ?, ?, ?);");
+$sentencia = $conex->prepare("INSERT INTO producto(idCategoria, precioProd, iva, stockMax, stockMin, cantProd, marca) VALUES (?, ?, ?, ?, ?, ?, ?);");
 
-$result = $sentencia->execute([$nombre, $precio, $iva, $stockMax, $stockMin, $cantidad, $categoria, $marca]);
+$result = $sentencia->execute([ $categoria, $precio, $iva, $stockMax, $stockMin, $cantidad, $marca]);
 
 if ($result == true) {
 	

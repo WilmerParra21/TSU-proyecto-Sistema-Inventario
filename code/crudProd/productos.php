@@ -94,7 +94,7 @@ foreach ($productos as $dato){
 	
 	<td class="text-center"><?php echo $dato->id_Producto;?></td>
 	
-	<td class="text-capitalize text-center"><?php echo $dato->nombreProd;?></td>
+	<td class="text-capitalize text-center"><?php echo $dato->idCategoria;?></td>
 	
 	<td class="text-center"><?php echo $dato->precioProd."$";?></td>
 	

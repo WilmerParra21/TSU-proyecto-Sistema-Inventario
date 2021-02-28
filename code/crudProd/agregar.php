@@ -1,3 +1,12 @@
+<?php 
+include '../conex.php';
+
+$sentencia = $conex->query('SELECT idCategoria, nombreProd FROM categoria  ORDER BY nombreProd ASC');
+
+$categorias = $sentencia->fetchAll(PDO::FETCH_OBJ);
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -57,7 +66,15 @@
 
 <div class="m-3">	
 <label for="nombreProd">Nombre</label>
-<input type="text" name="nombreProd" class="form-control" placeholder="Nombre del Producto">
+<select name="idCategoria" class="form-control">
+  <option selected disabled>--Seleccione--</option>
+  <?php foreach ($categorias as $cate) {?>
+  <option><?php echo $cate->nombreProd?></option>
+
+  <?php
+  } 
+  ?>
+</select>
 </div>
 <div class="d-flex">
 <div class="m-3">
@@ -75,10 +92,6 @@
 <div class="m-3"> 
 <label for="cantProd">Cantidad</label>
 <input type="number" name="cantProd" class="">
-</div>
-<div class="m-3"> 
-<label for="idCategoria">Categoria</label>
-<input type="text" name="idCategoria" class="">
 </div>
 
 </div>

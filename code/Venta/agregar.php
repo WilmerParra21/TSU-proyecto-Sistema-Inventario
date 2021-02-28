@@ -73,7 +73,7 @@ require '../conex.php';
 <label for="cantVent" class="font-weight-bold font-italic">Cantidad a Vender:</label>
 	<input type="number" name="cantVent" min="1" class="form-control">
 
-	<input type="submit" class="btn btn-primary mt-3 px-3"value="Agregar">
+	<input type="submit" class="btn btn-primary mt-3 px-3" value="Agregar">
 	</form>
 </div>
 <div class="bg-light">
@@ -85,7 +85,7 @@ $cantVent = 0;
 // si existe la sesion la uso
 if(isset($_SESSION["venta"])){
 	$venta = $_SESSION["venta"];
-	
+	$cantVent = $_GET['cantVent'];
 	// mensaje de prueba para mostrar la cantidad de productos que se agrega:
 	//echo "Cantidad: ".count($venta);
 ?>
@@ -93,7 +93,7 @@ if(isset($_SESSION["venta"])){
 	<table class="table border-left border-right border-dark shadow">
 	<thead>
 			<tr class="">
-				<th class="p-3 text-center" scope="col">id</th>
+				<th class="p-3 text-center" scope="col">ID Venta</th>
 				<th class="p-3 text-center" scope="col">Código</th>
 				<th class="p-3 text-center" scope="col">Producto</th>
 				<th class="p-3 text-center" scope="col">Precio</th>
@@ -107,11 +107,10 @@ if(isset($_SESSION["venta"])){
 			
 		<?php
 
-foreach ($venta as $producto) {
+foreach ($venta as $producto){
 
 if($producto->id_Producto == $producto->id_Producto){
-	$Subtotal = $producto->precioProd + $producto->precioProd;
-	
+	$Subtotal = $producto->precioProd * $cantVent;
 }
 
 //$producto->cantProd = $cantVent;
@@ -147,7 +146,7 @@ if($Total == 0){
 ?>
 <h4 class="text-muted mb-2">Total: <?php echo $Total; }?></h4>
 <a href="#" class="btn btn-success px-3">Procesar Venta</a>
-<a href="#" class="btn btn-danger px-3">Cancelar Venta</a>
+<a href="destroySession.php" class="btn btn-danger px-3">Cancelar Venta</a>
 </div>
 </div>
 
@@ -158,5 +157,6 @@ if($Total == 0){
 <script src="../../js/bootstrap.bundle.min.js" type="text/javascript"></script>
 <script src="../../js/jquery-3.5.1.min.js" type="text/javascript"></script>
 <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+<script src="ajax.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

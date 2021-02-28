@@ -1,3 +1,12 @@
+<?php
+
+include 'conex.php';
+
+$sentencia = $conex->query('SELECT * FROM producto WHERE cantProd <= stockMin LIMIT 3');
+
+  $productos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -73,9 +82,7 @@
        <li>
          <a class="nav-link text-light" href="#">Comprar</a>
       </li>
-       <li>
-          <a class="nav-link text-light" href="#">Devoluciones</a>
-      </li>
+  
        <li>
           <a class="nav-link text-light" href="ProductosAgotados/listar.php">Productos Agotados</a>
        </li>
@@ -96,8 +103,52 @@
     </article>
   </section>
 
-<section class="">
-  
+<section style="margin-top: 10rem; border-top: 2px solid white;">
+  <table class="table">
+    <legend class="font-weight-bold font-italic text-light text-center text-capitalize shadow m-0"  style="background-color: rgba(1, 1, 1, 0.4);">
+      Productos Pendientes a solicitar
+    </legend>
+    <thead class="table-secondary">
+      <tr class="table-active">
+        <th class="text-center text-capitalize" scope="col">Nombre del Producto</th>
+         <th class="text-center text-capitalize" scope="col">Marca</th>
+        <th class="text-center" scope="col">Cantidad Restante</th>
+        <th class="text-center" scope="col">Precio</th>
+        <th class="text-center" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: rgba(1, 1, 1, 0.5);">
+      <tr>
+      <?php
+foreach ($productos as $dato){
+
+  if($dato->cantProd == 0){
+?>      
+    <td class="text-danger font-weight-bold text-center text-capitalize"><?php echo $dato->nombreProd;?></td>
+    <td class="text-danger text-capitalize font-weight-bold text-center"><?php echo $dato->marca;?></td>
+    <td class="text-danger font-weight-bold text-center"><?php echo $dato->cantProd;?></td>
+    <?php 
+    }else{ 
+    ?>
+        <td class="text-warning font-weight-bold text-center text-capitalize"><?php echo $dato->nombreProd;?></td>
+
+         <td class="text-warning text-capitalize font-weight-bold text-center"><?php echo $dato->marca;?></td>
+        
+        <td class="text-warning font-weight-bold text-center"><?php echo $dato->cantProd;?></td>
+      <?php
+      }
+      ?>
+        <td class="text-light font-weight-bold text-center"><?php echo $dato->precioProd;?>$</td>
+        <td class="text-center">
+          <a href="#" class="btn btn-success">Solicitar</a>
+          <a href="#" class="btn btn-secondary">Información</a>
+        </td>
+      </tr>
+    <?php
+}
+?>
+    </tbody>
+  </table>
 </section>
 </main>
 
@@ -128,9 +179,6 @@
               </li>
 
               <li class="mb-1">
-                <small><a href="#!" class="text-decoration-none text-light">Devoluciones</a></small>
-              </li>
-              <li class="mb-1">
                 <small><a href="#!" class="text-decoration-none text-light">Ventas</a></small>
               </li>
     </ul>
@@ -155,7 +203,7 @@
                     </div>
   </div>
 </div>
-<div class="border-top border-danger text-center py-3 text-capitalize text-muted">&copy2021 Copyright desarrollado por: <a href="#" class="text-decoration-none text-light">Dani Pereira</a><a href="#" class="text-decoration-none text-light">, Dovany Liscano y </a><a href="#" class="text-decoration-none text-light"> Wilmer Parra</a>
+<div class="border-top border-danger text-center py-3 text-capitalize text-muted">&copy2021 Copyright desarrollado por: <a href="#" class="text-decoration-none text-light">Dani Pereira</a> y <a href="#" class="text-decoration-none text-light"> Wilmer Parra</a>
            
 </div>
 </footer>

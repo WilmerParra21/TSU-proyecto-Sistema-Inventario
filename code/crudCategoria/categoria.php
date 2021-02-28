@@ -67,7 +67,6 @@
 			<tr>
 			<th class="text-center" scope="col">id Categoria</th>
 			<th class="text-center" scope="col">Descripcion</th>
-			<th class="text-center" scope="col">Marca</th>
 			<th class="text-center" scope="col">Año</th>
 
 			<th class="text-center">Acciones</th>
@@ -81,10 +80,8 @@ foreach ($categoria as $dato){
 
 	<td class="text-center"><?php echo $dato->idCategoria;?></td>
 	
-	<td class="text-capitalize text-center"><?php echo $dato->descripcion;?></td>
-	
-	<td class="text-center"><?php echo $dato->marca;?></td>
-	
+	<td class="text-capitalize text-center"><?php echo $dato->nombreProd;?></td>
+
 	<td class="text-center"><?php echo $dato->año;?></td>
 
 	<td class="text-center">

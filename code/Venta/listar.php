@@ -68,16 +68,15 @@
 	</div>
 	<table class="table">
 		<thead class="table-dark">
-			<tr>
-			<th class="text-center" scope="col">ID</th>
-			<th class="text-center" scope="col">Código</th>
+	<tr>
+			<th class="text-center" scope="col">ID Venta</th>
 			<th class="text-center" scope="col">Cliente</th>
-			<th class="text-center" scope="col">Cantidad</th>
+			<th class="text-center" scope="col">Tipo de Pago</th>
 			<th class="text-center" scope="col">Total</th>
 			<th class="text-center" scope="col">Fecha</th>
 		
-			<th class="text-center">Acciones</th>
-			</tr>
+		<th class="text-center">Acciones</th>
+	</tr>
 		</thead>
 		<tbody>
 <?php
@@ -92,11 +91,9 @@
 	<td class="text-center"><?php ?></td>
 	
 	<td class="text-center"><?php ?></td>
-
-	<td class="text-center"><?php ?></td>
 	
 	<td class="text-center"><?php ?></td>
-
+	
 	<td class="text-center">
 	<a href="venta.php?id=<?php  ?>" class="btn btn-outline-primary">Ver Factura</a>
 
