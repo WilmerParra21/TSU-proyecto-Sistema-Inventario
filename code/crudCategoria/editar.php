@@ -67,23 +67,16 @@ $categoria = $sentencia->fetch(PDO::FETCH_OBJ);
 
 <section class="p-3 d-flex">
 
-<form action="modificar.php" method="post" accept-charset="utf-8" class="m-3 col-5 p-3 pr-5 pb-4" style="background-color: rgba(255, 255, 255, 0.3); border: 2px solid green">
+<form action="modificar.php" method="POST" accept-charset="utf-8" class="m-3 col-5 p-3 pr-5 pb-4" style="background-color: rgba(255, 255, 255, 0.3); border: 2px solid green">
 	
 <div>
 <label for="id_Categoria">Categoria</label>
 <input type="text" name="id_Categoria" class="form-control" value="<?php echo $categoria->idCategoria; ?>">
 </div>
 
-<div class="d-flex">
 <div class="m-1">
-<label for="descripcion">Descripcion</label>
-<input type="text" name="descripcion" class="form-control" value="<?php echo $categoria->descripcion; ?>">
-</div>
-</div>
-
-<div class="m-1"> 
-<label for="marca">Marca</label>
-<input type="text" name="marca" class="form-control" value="<?php echo $categoria->marca; ?>">
+<label for="nombreProd">Descripcion del Producto:</label>
+<input type="text" id="nombreProd" name="nombreProd" class="form-control" value="<?php echo $categoria->nombreProd; ?>">
 </div>
 
 <div class="m-1">	
@@ -93,7 +86,7 @@ $categoria = $sentencia->fetch(PDO::FETCH_OBJ);
 
 <input type="hidden" name="id2"value="<?php echo $categoria->idCategoria; ?>">
 
-<div class="float-right px-3">
+<div class="float-right mt-3 px-3">
 <input type="reset" value="Cancelar" class="btn btn-danger">
 
 <input type="submit" name="" value="Guardar" class="btn btn-success">

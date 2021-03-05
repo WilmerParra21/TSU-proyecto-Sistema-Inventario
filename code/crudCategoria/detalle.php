@@ -6,7 +6,7 @@ require "../conex.php";
 
 $id = $_GET['id'];
 
-$sentencia = $conex->prepare('SELECT * FROM categoria WHERE id_Categoria = ?;');
+$sentencia = $conex->prepare('SELECT * FROM categoria WHERE idCategoria = ?;');
 
 $result = $sentencia->execute([$id]);
 
@@ -60,7 +60,7 @@ $categoria = $sentencia->fetch(PDO::FETCH_OBJ);
 </nav>
 
 		</div>
-<h1 class="text-center text-light font-weight-bold mt-2 font-italic text-capitalize"><?php echo $categoria->descripcion;?></h1>
+<h1 class="text-center text-light font-weight-bold mt-2 font-italic text-capitalize"><?php echo $categoria->nombreProd;?></h1>
 	</header><!-- /header -->
 
 
@@ -69,9 +69,7 @@ $categoria = $sentencia->fetch(PDO::FETCH_OBJ);
   <ul class="list-unstyled d-flex"> 
 
 <div class="m-4">
-     <li class="font-weight-bold">Categoria: <p class="text-primary"><?php echo $categoria->id_Categoria;?></p></li>
-
-      <li class="font-weight-bold">Marca: <p class="text-primary"><?php echo $categoria->marca;?></p></li>
+     <li class="font-weight-bold">Categoria: <p class="text-primary"><?php echo $categoria->idCategoria;?></p></li>
 
       <li class="font-weight-bold">Año: <p class="text-primary"><?php echo $categoria->año;?></p></li>
 

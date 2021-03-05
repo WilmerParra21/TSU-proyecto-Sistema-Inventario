@@ -14,10 +14,9 @@ class PDF extends FPDF{
 		// salto de linea
 		$this->Ln(20);
 	
-$this->Cell(25, 10, 'ID', 1, 0, 'C', 0);
-$this->Cell(90, 10, 'Descripcion', 1, 0, 'C', 0);
-$this->Cell(50, 10, 'Marca', 1, 0, 'C', 0);
-$this->Cell(25, 10, utf8_decode('Año'), 1, 1, 'C', 0);
+$this->Cell(32, 10, 'ID', 1, 0, 'C', 0);
+$this->Cell(120, 10, 'Descripcion del Producto', 1, 0, 'C', 0);
+$this->Cell(32, 10, utf8_decode('Año'), 1, 1, 'C', 0);
 
 	}
 
@@ -43,10 +42,9 @@ $resultado = $mysqli->query($consulta);
 
 while($datos = $resultado->fetch_assoc()){
 
-$pdf->Cell(25, 10, $datos['idCategoria'], 1, 0, 'C', 0);
-$pdf->Cell(90, 10, $datos['descripcion'], 1, 0, 'C', 0);
-$pdf->Cell(50, 10, $datos['marca'], 1, 0, 'C', 0);
-$pdf->Cell(25, 10, $datos[utf8_decode('año')], 1, 1, 'C', 0);
+$pdf->Cell(32, 10, $datos['idCategoria'], 1, 0, 'C', 0);
+$pdf->Cell(120, 10, $datos['nombreProd'], 1, 0, 'C', 0);
+$pdf->Cell(32, 10, $datos[utf8_decode('año')], 1, 1, 'C', 0);
 
 
 	}

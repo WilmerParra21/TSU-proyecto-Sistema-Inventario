@@ -85,7 +85,7 @@ $cantVent = 0;
 // si existe la sesion la uso
 if(isset($_SESSION["venta"])){
 	$venta = $_SESSION["venta"];
-	$cantVent = $_GET['cantVent'];
+	
 	// mensaje de prueba para mostrar la cantidad de productos que se agrega:
 	//echo "Cantidad: ".count($venta);
 ?>
@@ -121,7 +121,7 @@ if($producto->id_Producto == $producto->id_Producto){
 		<td class="text-center"><?php echo $producto->id_Producto; ?></td>
 		<td class="text-center"><?php echo $producto->nombreProd; ?></td>
 		<td class="text-center"><?php echo $producto->precioProd; ?>$</td>
-		<td class="text-center"><?php echo $cantVent; ?></td>
+		<td class="text-center"><?php echo $cantVent;?></td>
 		<td class="text-center"><?php echo $producto->marca; ?></td>
 		<td class="text-center"><?php echo $Subtotal; ?>$</td>
 		<td class="text-center">

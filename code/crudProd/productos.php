@@ -3,7 +3,7 @@ session_start();
 
 include '../conex.php';
 
-	$sentencia = $conex->query('SELECT * FROM producto WHERE cantProd > stockMin');
+	$sentencia = $conex->query('SELECT * FROM producto, categoria WHERE cantProd > stockMin AND categoria.idCategoria = producto.idCategoria');
 
 	$productos = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
@@ -88,13 +88,13 @@ include '../conex.php';
 		</thead>
 		<tbody>
 <?php
-foreach ($productos as $dato){
+foreach($productos as $dato){
 ?>
 <tr class="border border-danger">
 	
 	<td class="text-center"><?php echo $dato->id_Producto;?></td>
 	
-	<td class="text-capitalize text-center"><?php echo $dato->idCategoria;?></td>
+	<td class="text-capitalize text-center"><?php echo $dato->nombreProd;?></td>
 	
 	<td class="text-center"><?php echo $dato->precioProd."$";?></td>
 	

@@ -56,22 +56,17 @@
 	
 
 <div class="m-1"> 
-<label for="idCategoria">Categoria</label>
+<label for="idCategoria">Categoria:</label>
 <input type="text" name="idCategoria" class="form-control">
 </div>
 
 <div class="m-1">
-<label for="descripcion">Descripcion</label>
+<label for="descripcion">Descripcion del Producto:</label>
 <input type="text" name="descripcion" class="form-control">
 </div>
 
-<div class="m-1">	
-<label for="marca">Marca</label>
-<input type="text" name="marca" class="form-control">
-</div>
-
 <div class="m-1"> 
-<label for="año">Año</label>
+<label for="año">Año:</label>
 <input type="number" name="año" class="form-control" min="4">
 </div>
 

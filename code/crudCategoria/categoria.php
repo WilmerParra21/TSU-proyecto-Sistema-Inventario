@@ -104,7 +104,7 @@ foreach ($categoria as $dato){
 <div>
 <p class="card-text font-italic mr-4 border-bottom border-dark pb-2">Generar Reporte PDF de todo el registro de Categoria</p>
 </div>
-	<a href="../categoriaPDF.php" class="btn btn-danger badge-pill"><i class="fas fa-download"></i> Obtener en PDF</a>
+	<a href="../ReportPdf/categoriaPDF.php" class="btn btn-danger badge-pill"><i class="fas fa-download"></i> Obtener en PDF</a>
 
 </div>
 </div>

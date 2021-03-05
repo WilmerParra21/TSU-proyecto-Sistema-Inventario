@@ -1,7 +1,7 @@
 <?php 
 include '../conex.php';
 
-$sentencia = $conex->query('SELECT idCategoria, nombreProd FROM categoria  ORDER BY nombreProd ASC');
+$sentencia = $conex->query('SELECT idCategoria, nombreProd FROM categoria ORDER BY nombreProd ASC');
 
 $categorias = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
@@ -42,10 +42,10 @@ $categorias = $sentencia->fetchAll(PDO::FETCH_OBJ);
           <a class="nav-link text-light ml-2" href="../crudCliente/clientes.php">Clientes</a>
           <a class="nav-link text-light ml-2" href="productos.php">Productos</a>
           <a class="nav-link text-light ml-2" href="../crudProov/proveedor.php">Proveedores</a>
-           <a class="nav-link text-light ml-2" href="../Venta/listar.php">Ventas</a>
+          <a class="nav-link text-light ml-2" href="../Venta/listar.php">Ventas</a>
         </div>
       </li>
-       <li class="nav-item active">
+      <li class="nav-item active">
         <a class="nav-link" href="#">Nosotros</a>
       </li>
       <li class="nav-item">
@@ -65,12 +65,13 @@ $categorias = $sentencia->fetchAll(PDO::FETCH_OBJ);
 	
 
 <div class="m-3">	
-<label for="nombreProd">Nombre</label>
+<label for="idCategoria">Nombre</label>
 <select name="idCategoria" class="form-control">
   <option selected disabled>--Seleccione--</option>
-  <?php foreach ($categorias as $cate) {?>
+  <?php 
+  foreach ($categorias as $cate){
+  ?>
   <option><?php echo $cate->nombreProd?></option>
-
   <?php
   } 
   ?>
@@ -79,38 +80,40 @@ $categorias = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <div class="d-flex">
 <div class="m-3">
 <label for="precioProd">Precio</label>
-<input type="text" name="precioProd" class="">
+<input type="text" name="precioProd" class="form-control">
 </div>
 
 <div class="m-3">	
 <label for="iva">Iva</label>
-<input type="text" name="iva" class="">
+<input type="text" name="iva" class="form-control">
 </div>
 </div>
 
-<div class="d-flex mb-2">
+<div class="d-flex">
 <div class="m-3"> 
 <label for="cantProd">Cantidad</label>
-<input type="number" name="cantProd" class="">
+<input type="number" name="cantProd" class="form-control">
+</div>
+
+<div class="m-3">
+<label for="marca">Marca</label>
+<input type="text" id="marca" name="marca" class="form-control">
 </div>
 
 </div>
-<div class="m-3">
-<label for="marca">Marca</label>
-<input type="text" name="marca">
-</div>
+<div class="d-flex">
 <div class="m-3"> 
 <label for="stockMin">Stock Minimo</label>
-<input type="number" name="stockMin" class="" min="5">
+<input type="number" id="stockMin" name="stockMin" class="form-control" min="5">
 </div>
 
 <div class="m-3">
 <label for="stockMax">Stock Máximo</label>
-<input type="number" name="stockMax" class="" min="72">
+<input type="number" id="stockMax" name="stockMax" class="form-control" max="320">
 </div>
-
+</div>
 <div class="float-right px-3">
-<input type="reset" value="Cancelar" class="btn btn-danger">
+<input type="reset" value="Cancelar" onclick="productos.php" class="btn btn-danger">
 
 <input type="submit" name="" value="Guardar" class="btn btn-success">
 </div>

@@ -6,7 +6,7 @@ require "../conex.php";
 
 $id = $_GET['id'];
 
-$sentencia = $conex->prepare('SELECT * FROM producto WHERE id_Producto = ?;');
+$sentencia = $conex->prepare('SELECT * FROM producto, categoria WHERE producto.id_Producto = 8 and producto.idCategoria = categoria.idCategoria');
 
 $result = $sentencia->execute([$id]);
 
@@ -36,7 +36,7 @@ $producto = $sentencia->fetch(PDO::FETCH_OBJ);
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="../index.php">inicio</a>
+        <a class="nav-link" href="../inicio.php">inicio</a>
       </li>
    
       <li class="nav-item dropdown">
@@ -90,7 +90,7 @@ $producto = $sentencia->fetch(PDO::FETCH_OBJ);
   </ul>
 </section>
 
-<a href="productos.php" class="btn btn-outline-primary ml-5">Volver atrás</a>
+<a href="productos.php" class="btn btn-outline-primary ml-5 mb-5">Volver atrás</a>
 
 <script src="../../js/bootstrap.bundle.min.js" type="text/javascript"></script>
 <script src="../../js/jquery-3.5.1.min.js" type="text/javascript"></script>

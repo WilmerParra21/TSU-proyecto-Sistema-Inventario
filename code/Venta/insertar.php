@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_POST['id_Producto']) || !isset($_POST['cantVent'])){
+if(!isset($_POST['id_Producto'])){
 
 	exit();
 }
