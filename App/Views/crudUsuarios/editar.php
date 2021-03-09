@@ -1,16 +1,11 @@
 <?php
-if (!isset($_GET['id'])){
-  header('Location: listar.php');
-}
-require "../conex.php";
+require_once "../../Models/Usuario.php";
 
 $id = $_GET['id'];
 
-$sentencia = $conex->prepare('SELECT * FROM login WHERE id = ?;');
+$user = new Usuario();
 
-$result = $sentencia->execute([$id]);
-
-$usuario = $sentencia->fetch(PDO::FETCH_OBJ);
+$usuario   = $user->editarUsuario($id);
 ?>
 
 <!DOCTYPE html>
@@ -19,12 +14,12 @@ $usuario = $sentencia->fetch(PDO::FETCH_OBJ);
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Editar Usuario</title>
-	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../css/login.css">
-	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/login.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/style.css">
 </head>
 <body>
-	<header id="header" class="">
+	<header id="header">
 		<div class="encabezado">
 		
 <nav class="navbar navbar-expand-lg navbar-light mt-3" style="background-color: rgba( 255, 255, 255, .5);
@@ -37,16 +32,16 @@ $usuario = $sentencia->fetch(PDO::FETCH_OBJ);
    <ul class="navbar-nav mr-auto">
 
       <li class="nav-item active">
-        <a class="nav-link" href="../../index.php">inicio</a>
+        <a class="nav-link" href="../../../index.php">inicio</a>
       </li>
    
       <li class="nav-item dropdown">
        <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgba(1, 1, 1, .9);">
-           <a class="nav-link text-light ml-2" href="../crudCategoria/categoria.php">Categoria</a>
-          <a class="nav-link text-light ml-2" href="../crudCliente/clientes.php">Clientes</a>
-          <a class="nav-link text-light ml-2" href="../crudProd/productos.php">Productos</a>
-          <a class="nav-link text-light ml-2" href="../crudProov/proveedor.php">Proveedores</a>
+           <a class="nav-link text-light ml-2" href="../crudCategoria/listar.php">Categoria</a>
+          <a class="nav-link text-light ml-2" href="../crudCliente/listar.php">Clientes</a>
+          <a class="nav-link text-light ml-2" href="../crudProd/listar.php">Productos</a>
+          <a class="nav-link text-light ml-2" href="../crudProov/listar.php">Proveedores</a>
            <a class="nav-link text-light ml-2" href="../Venta/listar.php">Ventas</a>
         </div>
       </li>
@@ -75,18 +70,18 @@ $usuario = $sentencia->fetch(PDO::FETCH_OBJ);
 		<div>
 			<h2>Registro</h2>
 		</div>
-<form id="formulary" action="modificar.php" method="POST" accept-charset="utf-8">
+<form id="formulary" action="#" method="POST" accept-charset="utf-8">
 <div style="margin-top: -2rem">
 <label for="nombre_ape">Nombre Completo:</label>
 <input type="text" id="nombre_ape" name="nombre_ape" onpaste ="return false" value="<?php echo $usuario->nombre_ape; ?>">
 </div>
 
 <label for="correo">E-mail:</label>
-<input type="email" style="margin-left:  6.2rem" id="correo" name="correo" onpaste="return false" value="<?php echo $usuario->correo; ?>">
+<input type="email" style="margin-left: 6.2rem" id="correo" name="correo" onpaste="return false" value="<?php echo $usuario->correo; ?>">
 </div>
 
 <label for="usuario">Usuario:</label>
-<input type="text" id="usuario" style="margin-left: 5.4rem" name="nombre_usuario" onpaste="return false" value="<?php echo $usuario->nombre_usuario; ?>">
+<input type="text" id="usuario" style="margin-left: 5.4rem" name="usuario" onpaste="return false" value="<?php echo $usuario->usuario; ?>">
 
 <label for="clave">Nueva Contraseña:</label>
 <input type="password" id="clave" name="clave" onpaste="return false" value="<?php echo $usuario->clave; ?>">
@@ -97,7 +92,7 @@ $usuario = $sentencia->fetch(PDO::FETCH_OBJ);
  <option value="Administrador">Administrador</option>
  <option value="Usuario">Usuario</option>
 </select>
-<input type="hidden" name="id2"value="<?php echo $usuario->id; ?>">
+<input type="hidden" name="id"value="<?php echo $usuario->id; ?>">
 
 <div class="mt-0 botones">
 <input type="reset" id="borrar" class="btn btn-outline-danger" value="Borrar">
@@ -108,8 +103,8 @@ $usuario = $sentencia->fetch(PDO::FETCH_OBJ);
 </form>
 	</section>
 
-<script src="../../js/bootstrap.bundle.min.js" type="text/javascript"></script>
-<script src="../../js/jquery-3.5.1.min.js" type="text/javascript"></script>
-<script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../../js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<script src="../../../js/jquery-3.5.1.min.js" type="text/javascript"></script>
+<script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>

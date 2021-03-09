@@ -1,16 +1,11 @@
 <?php
-	if(!isset($_GET['id'])){
-  header('Location: listar.php');
-}
-require "../conex.php";
+require_once "../../Models/Usuario.php";
 
 $id = $_GET['id'];
 
-$sentencia = $conex->prepare('SELECT * FROM login WHERE id = ?;');
+$user = new Usuario();
 
-$result = $sentencia->execute([$id]);
-
-$usuario = $sentencia->fetch(PDO::FETCH_OBJ);
+$usuario = $user->detalleUsuario($id);
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +14,8 @@ $usuario = $sentencia->fetch(PDO::FETCH_OBJ);
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Ver Usuario</title>
-	<link rel="stylesheet" href="../../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="stylesheet" href="../../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../../css/style.css">
 </head>
 <body>
 
@@ -36,16 +31,16 @@ $usuario = $sentencia->fetch(PDO::FETCH_OBJ);
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="../inicio.php">inicio</a>
+        <a class="nav-link" href="../../../index.php">inicio</a>
       </li>
    
       <li class="nav-item dropdown">
        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgba(1, 1, 1, .9);">
-          <a class="nav-link text-light ml-2" href="../crudCategoria/categoria.php">Categoria</a>
-          <a class="nav-link text-light ml-2" href="../crudCliente/clientes.php">Clientes</a>
-          <a class="nav-link text-light ml-2" href="../crudProd/productos.php">Productos</a>
-          <a class="nav-link text-light ml-2" href="../crudProov/proveedor.php">Proveedores</a>
+          <a class="nav-link text-light ml-2" href="../crudCategoria/listar.php">Categoria</a>
+          <a class="nav-link text-light ml-2" href="../crudCliente/listar.php">Clientes</a>
+          <a class="nav-link text-light ml-2" href="../crudProd/listar.php">Productos</a>
+          <a class="nav-link text-light ml-2" href="../crudProov/listar.php">Proveedores</a>
            <a class="nav-link text-light ml-2" href="../Venta/listar.php">Ventas</a>
         </div>
       </li>
@@ -60,7 +55,7 @@ $usuario = $sentencia->fetch(PDO::FETCH_OBJ);
 </nav>
 
 		</div>
-<h1 class="text-center text-light font-weight-bold mt-2 font-italic text-capitalize"><?php echo $usuario->nombre_usuario;?></h1>
+<h1 class="text-center text-light font-weight-bold mt-2 font-italic text-capitalize"><?php echo $usuario->usuario;?></h1>
 
 	</header>
 
@@ -77,5 +72,11 @@ $usuario = $sentencia->fetch(PDO::FETCH_OBJ);
 </section>
 
 <a href="listar.php" class="btn btn-outline-primary ml-5">Volver atrás</a>
+
+<script src="../../../js/all.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<script src="../../../js/jquery-3.5.1.min.js" type="text/javascript"></script>
+<script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+
 </body>
 </html>

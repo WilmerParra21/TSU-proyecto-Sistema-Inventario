@@ -1,8 +1,13 @@
 <?php
 
-include_once "../../Models/conex.php";
+require_once "../../Models/Usuario.php";
+
+$user = new Usuario();
+
+$usuarios = $user->listarUsuarios();
+
 /*
-	 include '../conex.php';
+	include '../conex.php';
 
 	$sentencia = $conex->query('SELECT * FROM login;');
 
@@ -39,11 +44,11 @@ include_once "../../Models/conex.php";
       <li class="nav-item dropdown">
        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgba(1, 1, 1, .9);">
-        	<a class="nav-link text-light ml-2" href="../crudCategoria/listar.php">Categoria</a>
-          <a class="nav-link text-light ml-2" href="../crudCliente/listar.php">Clientes</a>
-          <a class="nav-link text-light ml-2" href="../crudProd/listar.php">Productos</a>
-          <a class="nav-link text-light ml-2" href="../crudProov/listar.php">Proveedores</a>
-           <a class="nav-link text-light ml-2" href="../Venta/listar.php">Ventas</a>
+            <a class="nav-link text-light ml-2" href="../crudCategoria/listar.php">Categoria</a>
+            <a class="nav-link text-light ml-2" href="../crudCliente/listar.php">Clientes</a>
+            <a class="nav-link text-light ml-2" href="../crudProd/listar.php">Productos</a>
+            <a class="nav-link text-light ml-2" href="../crudProov/listar.php">Proveedores</a>
+            <a class="nav-link text-light ml-2" href="../Venta/listar.php">Ventas</a>
         </div>
       </li>
        <li class="nav-item active">
@@ -79,17 +84,17 @@ include_once "../../Models/conex.php";
 <?php
 
 
-foreach($usuario as $dato){
+foreach($usuarios as $dato){
 ?>
 <tr class="border border-danger">
 
-	<td class="text-center"><?php echo $dato['id'];?></td>
+	<td class="text-center"><?php echo $dato->id;?></td>
 	
-	<td class="text-capitalize text-center"><?php echo $dato['nombre_usuario'];?></td>
+	<td class="text-capitalize text-center"><?php echo $dato->usuario;?></td>
 	
-	<td class="text-center"><?php echo $dato['correo'];?></td>
+	<td class="text-center"><?php echo $dato->correo;?></td>
 	
-	<td class="text-center"><?php echo $dato['acceso'];?></td>
+	<td class="text-center"><?php echo $dato->acceso;?></td>
 
 	<td class="text-center">
 	<a href="detalle.php?id=<?php echo $dato->id; ?>" class="btn btn-outline-info">Ver Detalle</a>

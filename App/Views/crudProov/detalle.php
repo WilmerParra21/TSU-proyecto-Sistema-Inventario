@@ -1,6 +1,6 @@
 <?php
 	if (!isset($_GET['id'])){
-  header('Location: proveedor.php');
+  header('Location: listar.php');
 }
 require "../../Models/conex.php";
 
@@ -89,7 +89,7 @@ $proveedor = $sentencia->fetch(PDO::FETCH_OBJ);
   </ul>
 </section>
 
-<a href="proveedor.php" class="btn btn-outline-primary ml-5">Volver atrás</a>
+<a href="listar.php" class="btn btn-outline-primary ml-5">Volver atrás</a>
 
 <script src="../../../js/bootstrap.bundle.min.js" type="text/javascript"></script>
 <script src="../../../js/jquery-3.5.1.min.js" type="text/javascript"></script>
