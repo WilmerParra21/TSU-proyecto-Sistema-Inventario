@@ -67,13 +67,13 @@ $categorias = $sentencia->fetchAll(PDO::FETCH_OBJ);
 	
 
 <div class="m-3">	
-<label for="idCategoria">Nombre</label>
+<label>Nombre</label>
 <select name="idCategoria" class="form-control">
   <option selected disabled>--Seleccione--</option>
-  <?php 
+  <?php
   foreach ($categorias as $cate){
   ?>
-  <option><?php echo $cate->nombreProd?></option>
+  <option value="<?php $cate->idCategoria;?>"><?php echo $cate->nombreProd ?></option>
   <?php
   } 
   ?>
@@ -115,7 +115,7 @@ $categorias = $sentencia->fetchAll(PDO::FETCH_OBJ);
 </div>
 </div>
 <div class="float-right px-3">
-<input type="reset" value="Cancelar" onclick="productos.php" class="btn btn-danger">
+<input type="reset" value="Cancelar" onclick="listar.php" class="btn btn-danger">
 
 <input type="submit" name="" value="Guardar" class="btn btn-success">
 </div>

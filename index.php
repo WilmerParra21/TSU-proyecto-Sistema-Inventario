@@ -6,9 +6,9 @@ include_once 'App/Models/conex.php';
 $cox = new Conex();
 
 // se llama la funcion para solicitar la consulta a la BD
-$sentencia = $cox->Conection()->query('SELECT * FROM producto WHERE cantProd <= stockMin LIMIT 3');
+$sentencia  = $cox->Conection()->query('SELECT * FROM producto, categoria WHERE cantProd <= stockMin AND categoria.idCategoria = producto.idCategoria');
 
-  $productos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+$productos = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <!DOCTYPE html>

@@ -1,17 +1,17 @@
 <?php
-if (!isset($_POST['idCategoria']) || !isset($_POST['precioProd']) || !isset($_POST['cantProd']) || !isset($_POST['stockMin']) || !isset($_POST['stockMax'])){
+if (!isset($_POST['idCategoria']) || !isset($_POST['precioProd']) || !isset($_POST['cantProd']) || !isset($_POST['stockMin']) || !isset($_POST['stockMax']) || !isset($_POST['marca'])){
 	exit();
 }
 
 require '../../Models/conex.php';
 
 $categoria = $_POST['idCategoria'];
-$precio = $_POST['precioProd'];
-$iva = $_POST['iva'];
-$cantidad = $_POST['cantProd'];
-$stockMax = $_POST['stockMax'];
-$stockMin = $_POST['stockMin'];
-$marca = $_POST['marca'];
+$precio    = $_POST['precioProd'];
+$iva       = $_POST['iva'];
+$cantidad  = $_POST['cantProd'];
+$stockMax  = $_POST['stockMax'];
+$stockMin  = $_POST['stockMin'];
+$marca     = $_POST['marca'];
 
 $cox = new Conex();
 
